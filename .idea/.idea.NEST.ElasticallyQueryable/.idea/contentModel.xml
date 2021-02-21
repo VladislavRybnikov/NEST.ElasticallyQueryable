@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\vladyslav.rybnikov\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\vladyslav.rybnikov\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_NEST.ElasticallyQueryable.1420208031.00" t="ExcludeRecursive" />
+    <e p="C:\Users\vladyslav.rybnikov\RiderProjects\NEST.ElasticallyQueryable" t="IncludeFlat">
+      <e p="NEST.ElasticallyQueryable" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ElasticClientExtensions.cs" t="Include" />
+        <e p="ElasticQuery.cs" t="Include" />
+        <e p="ElasticQueryContext.cs" t="Include" />
+        <e p="ElasticQueryProvider.cs" t="Include" />
+        <e p="NEST.ElasticallyQueryable.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="NEST.ElasticallyQueryable.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="NEST.ElasticallyQueryable.ConsoleTest" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="NEST.ElasticallyQueryable.ConsoleTest.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="NEST.ElasticallyQueryable.ConsoleTest.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+      </e>
+      <e p="NEST.ElasticallyQueryable.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

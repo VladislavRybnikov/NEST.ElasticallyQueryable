@@ -1,0 +1,136 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\vladyslav.rybnikov\\RiderProjects\\NEST.ElasticallyQueryable\\NEST.ElasticallyQueryable.ConsoleTest\\NEST.ElasticallyQueryable.ConsoleTest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\vladyslav.rybnikov\\RiderProjects\\NEST.ElasticallyQueryable\\NEST.ElasticallyQueryable.ConsoleTest\\NEST.ElasticallyQueryable.ConsoleTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vladyslav.rybnikov\\RiderProjects\\NEST.ElasticallyQueryable\\NEST.ElasticallyQueryable.ConsoleTest\\NEST.ElasticallyQueryable.ConsoleTest.csproj",
+        "projectName": "NEST.ElasticallyQueryable.ConsoleTest",
+        "projectPath": "C:\\Users\\vladyslav.rybnikov\\RiderProjects\\NEST.ElasticallyQueryable\\NEST.ElasticallyQueryable.ConsoleTest\\NEST.ElasticallyQueryable.ConsoleTest.csproj",
+        "packagesPath": "C:\\Users\\vladyslav.rybnikov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vladyslav.rybnikov\\RiderProjects\\NEST.ElasticallyQueryable\\NEST.ElasticallyQueryable.ConsoleTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vladyslav.rybnikov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\vladyslav.rybnikov\\RiderProjects\\NEST.ElasticallyQueryable\\NEST.ElasticallyQueryable\\NEST.ElasticallyQueryable.csproj": {
+                "projectPath": "C:\\Users\\vladyslav.rybnikov\\RiderProjects\\NEST.ElasticallyQueryable\\NEST.ElasticallyQueryable\\NEST.ElasticallyQueryable.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Moq": {
+              "target": "Package",
+              "version": "[4.16.0, )"
+            },
+            "NEST": {
+              "target": "Package",
+              "version": "[7.11.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vladyslav.rybnikov\\RiderProjects\\NEST.ElasticallyQueryable\\NEST.ElasticallyQueryable\\NEST.ElasticallyQueryable.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vladyslav.rybnikov\\RiderProjects\\NEST.ElasticallyQueryable\\NEST.ElasticallyQueryable\\NEST.ElasticallyQueryable.csproj",
+        "projectName": "NEST.ElasticallyQueryable",
+        "projectPath": "C:\\Users\\vladyslav.rybnikov\\RiderProjects\\NEST.ElasticallyQueryable\\NEST.ElasticallyQueryable\\NEST.ElasticallyQueryable.csproj",
+        "packagesPath": "C:\\Users\\vladyslav.rybnikov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vladyslav.rybnikov\\RiderProjects\\NEST.ElasticallyQueryable\\NEST.ElasticallyQueryable\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vladyslav.rybnikov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "NEST": {
+              "target": "Package",
+              "version": "[7.11.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

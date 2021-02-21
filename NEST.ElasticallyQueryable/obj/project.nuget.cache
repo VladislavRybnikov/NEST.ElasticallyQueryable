@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "MKmJbc0/7ymhSxMO19bacRwms1QTXfvheIDACPlMUeIKp6lH+KsNaWSj77yg4s7FRr3L+8ynUMttiXtTTkTFJA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\vladyslav.rybnikov\\RiderProjects\\NEST.ElasticallyQueryable\\NEST.ElasticallyQueryable\\NEST.ElasticallyQueryable.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vladyslav.rybnikov\\.nuget\\packages\\elasticsearch.net\\7.11.1\\elasticsearch.net.7.11.1.nupkg.sha512",
+    "C:\\Users\\vladyslav.rybnikov\\.nuget\\packages\\microsoft.csharp\\4.6.0\\microsoft.csharp.4.6.0.nupkg.sha512",
+    "C:\\Users\\vladyslav.rybnikov\\.nuget\\packages\\nest\\7.11.1\\nest.7.11.1.nupkg.sha512",
+    "C:\\Users\\vladyslav.rybnikov\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\vladyslav.rybnikov\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

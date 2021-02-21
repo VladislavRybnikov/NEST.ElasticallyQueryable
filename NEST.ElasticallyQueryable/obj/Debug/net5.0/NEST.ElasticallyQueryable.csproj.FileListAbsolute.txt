@@ -1,0 +1,12 @@
+C:\Users\vladyslav.rybnikov\RiderProjects\NEST.ElasticallyQueryable\NEST.ElasticallyQueryable\bin\Debug\net5.0\NEST.ElasticallyQueryable.deps.json
+C:\Users\vladyslav.rybnikov\RiderProjects\NEST.ElasticallyQueryable\NEST.ElasticallyQueryable\bin\Debug\net5.0\NEST.ElasticallyQueryable.dll
+C:\Users\vladyslav.rybnikov\RiderProjects\NEST.ElasticallyQueryable\NEST.ElasticallyQueryable\bin\Debug\net5.0\ref\NEST.ElasticallyQueryable.dll
+C:\Users\vladyslav.rybnikov\RiderProjects\NEST.ElasticallyQueryable\NEST.ElasticallyQueryable\bin\Debug\net5.0\NEST.ElasticallyQueryable.pdb
+C:\Users\vladyslav.rybnikov\RiderProjects\NEST.ElasticallyQueryable\NEST.ElasticallyQueryable\obj\Debug\net5.0\NEST.ElasticallyQueryable.csprojAssemblyReference.cache
+C:\Users\vladyslav.rybnikov\RiderProjects\NEST.ElasticallyQueryable\NEST.ElasticallyQueryable\obj\Debug\net5.0\NEST.ElasticallyQueryable.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vladyslav.rybnikov\RiderProjects\NEST.ElasticallyQueryable\NEST.ElasticallyQueryable\obj\Debug\net5.0\NEST.ElasticallyQueryable.AssemblyInfoInputs.cache
+C:\Users\vladyslav.rybnikov\RiderProjects\NEST.ElasticallyQueryable\NEST.ElasticallyQueryable\obj\Debug\net5.0\NEST.ElasticallyQueryable.AssemblyInfo.cs
+C:\Users\vladyslav.rybnikov\RiderProjects\NEST.ElasticallyQueryable\NEST.ElasticallyQueryable\obj\Debug\net5.0\NEST.ElasticallyQueryable.csproj.CoreCompileInputs.cache
+C:\Users\vladyslav.rybnikov\RiderProjects\NEST.ElasticallyQueryable\NEST.ElasticallyQueryable\obj\Debug\net5.0\NEST.ElasticallyQueryable.dll
+C:\Users\vladyslav.rybnikov\RiderProjects\NEST.ElasticallyQueryable\NEST.ElasticallyQueryable\obj\Debug\net5.0\ref\NEST.ElasticallyQueryable.dll
+C:\Users\vladyslav.rybnikov\RiderProjects\NEST.ElasticallyQueryable\NEST.ElasticallyQueryable\obj\Debug\net5.0\NEST.ElasticallyQueryable.pdb
