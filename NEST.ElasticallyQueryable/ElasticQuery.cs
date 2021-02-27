@@ -26,9 +26,23 @@ namespace NEST.ElasticallyQueryable
             Expression = expression;
         }
 
-        public Task<ISearchResponse<TSearch>> SearchInternalAsync<TSearch>() 
+        public Task<ISearchResponse<TSearch>> SearchInternalAsync<TSearch>(
+            Func<SearchDescriptor<TSearch>, ISearchRequest> searchFunc = null) 
             where TSearch : class
-            => _context.Client.SearchAsync<TSearch>(Provider.Execute<ISearchRequest>(Expression));
+        {
+            var searchDescriptor = Provider.Execute<SearchDescriptor<TSearch>>(Expression);
+            var request = searchFunc?.Invoke(searchDescriptor) ?? searchDescriptor;
+            return _context.Client.SearchAsync<TSearch>(request);
+        }
+
+        public ISearchResponse<TSearch> SearchInternal<TSearch>(
+            Func<SearchDescriptor<TSearch>, ISearchRequest> searchFunc = null) 
+            where TSearch : class
+        {
+            var searchDescriptor = Provider.Execute<SearchDescriptor<TSearch>>(Expression);
+            var request = searchFunc?.Invoke(searchDescriptor) ?? searchDescriptor;
+            return _context.Client.Search<TSearch>(request);
+        }
 
         public IEnumerator<T> GetEnumerator() => Provider.Execute<IEnumerable<T>>(Expression).GetEnumerator();
 
