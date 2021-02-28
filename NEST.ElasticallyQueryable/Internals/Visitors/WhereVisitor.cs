@@ -1,4 +1,6 @@
-﻿using System.Linq.Expressions;
+﻿using System;
+using System.Linq.Expressions;
+using System.Reflection;
 using Nest;
 using NEST.ElasticallyQueryable.Internal;
 using NEST.ElasticallyQueryable.Internals.Visitors.Base;
@@ -7,67 +9,59 @@ namespace NEST.ElasticallyQueryable.Internals.Visitors
 {
     public class WhereVisitor<T> : ElasticVisitor
     {
+        private static class MatchQueryDescriptorInfo
+        {
+            public static Type Type 
+                => typeof(MatchQueryDescriptor<>).MakeGenericType(typeof(T));
+            
+            public static MethodInfo QueryMethod 
+                => Type.GetMethod(nameof(MatchQueryDescriptor<object>.Query));
+
+            public static string FieldMethodName => nameof(MatchQueryDescriptor<object>.Field);
+        }
+
+        private static class QueryContainerDescriptorInfo
+        {
+            public static Type Type => typeof(QueryContainerDescriptor<>).MakeGenericType(typeof(T));
+            
+            public static MethodInfo MatchMethod => Type.GetMethod(nameof(QueryContainerDescriptor<object>.Match));
+        }
+
+        private ConstantExpression _constant;
+        private MemberExpression _member;
+        
         public WhereVisitor(ISearchDescriptorAccessor accessor) : base(accessor)
         {
+            _constant = null;
+            _member = null;
         }
-        
+
+        protected override Expression VisitMember(MemberExpression node)
+        {
+            _member = node;
+            return base.VisitMember(node);
+        }
+
+        protected override Expression VisitConstant(ConstantExpression node)
+        {
+            _constant = node;
+            return base.VisitConstant(node);
+        }
+
         protected override Expression VisitBinary(BinaryExpression node)
         {
+            base.VisitBinary(node);
+            
             if (node.Type == typeof(bool))
             {
-                var matchQueryDescriptorType = (typeof(MatchQueryDescriptor<>)).MakeGenericType(typeof(T));
-
                 var queryMethod = SearchDescriptorType.GetMethod(nameof(SearchDescriptor<object>.Query));
-                var matchQueryMethod =
-                    matchQueryDescriptorType.GetMethod(nameof(MatchQueryDescriptor<object>.Query));
-                
-                if (matchQueryMethod is null) return node;
-                
-                MethodCallExpression methodCall = null;
 
-                var queryContainerType = typeof(QueryContainerDescriptor<>).MakeGenericType(typeof(T));
-
-                var queryParam = Expression.Parameter(queryContainerType, "q");
-
-                var matchMethod = typeof(QueryContainerDescriptor<>).MakeGenericType(typeof(T))
-                    .GetMethod(nameof(QueryContainerDescriptor<object>.Match));
-
-                if (matchMethod is null) return node;
-                
-                if (node.NodeType == ExpressionType.Equal)
+                var queryParam = Expression.Parameter(QueryContainerDescriptorInfo.Type, "q");
+                var methodCall = node.NodeType switch
                 {
-                    (ConstantExpression constantExpression, MemberExpression propExpression) = (null, null);
-
-                    if (node.Left is ConstantExpression leftConstant
-                        && node.Right is MemberExpression rightProperty)
-                    {
-                        (constantExpression, propExpression) = (leftConstant, rightProperty);
-                    }
-
-                    if (node.Right is ConstantExpression rightConstant
-                        && node.Left is MemberExpression leftProperty)
-                    {
-                        (constantExpression, propExpression) = (rightConstant, leftProperty);
-                    }
-
-                    if (propExpression?.Expression is not ParameterExpression lambdaParam) return node;
-                    
-                    var matchParam = Expression.Parameter(matchQueryDescriptorType, "m");
-
-                    var callFieldMethod = Expression.Call(matchParam,
-                        nameof(MatchQueryDescriptor<object>.Field),
-                        new[] {propExpression.Type},
-                        Expression.Lambda(propExpression, lambdaParam)
-                    );
-
-                    var callMatchQueryMethod =
-                        Expression.Call(callFieldMethod, matchQueryMethod, constantExpression);
-
-                    var callMatchMethod = Expression.Call(queryParam, matchMethod,
-                        Expression.Lambda(callMatchQueryMethod, matchParam));
-
-                    methodCall = callMatchMethod;
-                }
+                    ExpressionType.Equal => VisitEquality(queryParam),
+                    _ => null
+                };
 
                 if (methodCall != null)
                 {
@@ -80,7 +74,28 @@ namespace NEST.ElasticallyQueryable.Internals.Visitors
                 return node;
             }
 
-            return base.VisitBinary(node);
+            return node;
+        }
+
+        private MethodCallExpression VisitEquality(ParameterExpression queryParam)
+        {
+            if (_member?.Expression is not ParameterExpression lambdaParam) return null;
+                    
+            var matchParam = Expression.Parameter(MatchQueryDescriptorInfo.Type, "m");
+
+            var callFieldMethod = Expression.Call(matchParam,
+                MatchQueryDescriptorInfo.FieldMethodName,
+                new[] {_member.Type},
+                Expression.Lambda(_member, lambdaParam)
+            );
+
+            var callMatchQueryMethod =
+                Expression.Call(callFieldMethod, MatchQueryDescriptorInfo.QueryMethod, _constant);
+
+            var callMatchMethod = Expression.Call(queryParam, QueryContainerDescriptorInfo.MatchMethod,
+                Expression.Lambda(callMatchQueryMethod, matchParam));
+
+            return callMatchMethod;
         }
     }
 }

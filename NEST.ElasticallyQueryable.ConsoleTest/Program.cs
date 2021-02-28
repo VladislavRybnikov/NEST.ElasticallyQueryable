@@ -77,6 +77,7 @@ namespace NEST.ElasticallyQueryable.ConsoleTest
             
             client
                 .ElasticallyQuery<User>()
+                .Where(u => u.Name.StartsWith("V"))
                 .Where(u => u.Name == "Vlad")
                 .Skip(5)
                 .Take(10)
